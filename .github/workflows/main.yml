@@ -73,6 +73,11 @@ jobs:
         with:
           name: devconfig
 
+      - name: Download the Hello.sh
+        uses: actions/download-artifact@v3
+        with:
+          name: scripts/hello.sh
+
       - name: Copy the Index.html to Ubuntu Server
         uses: marcodallasanta/ssh-scp-deploy@v1.2.0
         with:
@@ -83,7 +88,7 @@ jobs:
           key: ${{secrets.KEY}}
           ssh_options: -o StrictHostKeyChecking=no
         
-      - name: Copy the Index.html to Ubuntu Server
+      - name: Copy the hello.sh to Ubuntu Server
         uses: marcodallasanta/ssh-scp-deploy@v1.2.0
         with:
           local: 'scripts/hello.sh'
