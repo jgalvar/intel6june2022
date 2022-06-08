@@ -41,6 +41,11 @@ jobs:
     steps:
       - name: Simple Test Print Statement
         run: echo "This is a test Job"
+  running:
+    runs-on: ubunto-latest
+    steps:
+      - name: Run sh script 
+        run: sh ./scripts/hello.sh
 
 
   deployment:
