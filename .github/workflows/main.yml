@@ -32,9 +32,7 @@ steps:
     uses: actions/chjeckout@v3
     
   - name: Present Working Directory
-    run: |
-    pwd
-    ls -la
+    run: | pwd    ls -la
     
   - name: Copy the index.html to ubunto server
     uses: marcodallasanta/ssh-scp-deploy@v1.2.0
