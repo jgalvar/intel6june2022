@@ -82,6 +82,16 @@ jobs:
           user: ${{secrets.USER}}
           key: ${{secrets.KEY}}
           ssh_options: -o StrictHostKeyChecking=no
+        
+      - name: Copy the Index.html to Ubuntu Server
+        uses: marcodallasanta/ssh-scp-deploy@v1.2.0
+        with:
+          local: 'scripts/hello.sh'
+          remote: '~/hello.sh'
+          host: ${{secrets.HOST}}
+          user: ${{secrets.USER}}
+          key: ${{secrets.KEY}}
+          ssh_options: -o StrictHostKeyChecking=no
 
       # - name: Copy the Index.html to Ubuntu Server
       #   uses: marcodallasanta/ssh-scp-deploy@v1.2.0
