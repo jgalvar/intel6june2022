@@ -1,0 +1,49 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ "main" ]
+  
+  workflow_dispatch:
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Simple Build Print Statement 
+        run: echo "This is a Build Job"
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Simple Build Print Statement 
+        run: echo "This is a test Job"
+
+deployment:
+    runs-on: ubunto-latest 
+    
+steps:
+  - name: Checkout the Code
+    uses: actions/chjeckout@v3
+    
+  - name: Present Working Directory
+    run: |
+    pwd
+    ls -la
+    
+  - name: Copy the index.html to ubunto server
+    uses: marcodallasanta/ssh-scp-deploy@v1.2.0
+    with:
+      local: 'index.html'
+      remote: '~/index.html'
+      host:
+      user:
+      key:
+      pre_upload:
+      post_upload:
+      ssh_options:
