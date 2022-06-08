@@ -25,7 +25,7 @@ jobs:
         run: echo "This is a test Job"
 
 deployment:
-    runs-on: ubunto-latest 
+    runs-on: ubuntu-latest 
     
 steps:
   - name: Checkout the Code
