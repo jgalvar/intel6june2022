@@ -45,7 +45,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Run sh script 
-        run: sh ./scripts/hello.sh
+        run: |
+        chmod +x ./scripts/hello.sh
+        ./scripts/hello.sh
 
 
   deployment:
