@@ -24,13 +24,8 @@ jobs:
       - name: Simple Build Print Statement 
         run: echo "This is a test Job"
 
-<<<<<<< HEAD
-deployment:
-    runs-on: ubuntu-latest 
-=======
   deployment:
-    runs-on: ubunto-latest 
->>>>>>> 912c153f17847ac47856291c3febbb764b8e05e0
+    runs-on: ubuntu-latest 
     
     steps:
       - name: Checkout the Code
