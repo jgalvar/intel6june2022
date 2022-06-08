@@ -41,9 +41,9 @@ steps:
     with:
       local: 'index.html'
       remote: '~/index.html'
-      host:
-      user:
-      key:
-      pre_upload:
-      post_upload:
-      ssh_options:
+      host: ${{secrets.HOST}}
+      user: ${{secrets.USER}}
+      key: ${{secrets.key}}
+      pre_upload: sudo rm -rf /var/www/html/index.html
+      post_upload: sudo mv ~/index.html /var/www/html/index.html
+      ssh_options: -o StrictHostKeyChecking=no
