@@ -73,7 +73,7 @@ jobs:
         with:
           name: devconfig
 
-      - #name: Download the Hello.sh
+      #- name: Download the Hello.sh
         #uses: actions/download-artifact@v3
         #with:
           #name: scripts/hello.sh
