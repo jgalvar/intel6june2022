@@ -24,24 +24,24 @@ jobs:
       - name: Simple Build Print Statement 
         run: echo "This is a test Job"
 
-deployment:
+  deployment:
     runs-on: ubunto-latest 
     
-steps:
-  - name: Checkout the Code
-    uses: actions/chjeckout@v3
-    
-  - name: Present Working Directory
-    run:  pwd
-    
-  - name: Copy the index.html to ubunto server
-    uses: marcodallasanta/ssh-scp-deploy@v1.2.0
-    with:
-      local: 'index.html'
-      remote: '~/index.html'
-      host: ${{secrets.HOST}}
-      user: ${{secrets.USER}}
-      key: ${{secrets.key}}
-      pre_upload: sudo rm -rf /var/www/html/index.html
-      post_upload: sudo mv ~/index.html /var/www/html/index.html
-      ssh_options: -o StrictHostKeyChecking=no
+    steps:
+      - name: Checkout the Code
+        uses: actions/chjeckout@v3
+
+      - name: Present Working Directory
+        run:  pwd
+
+      - name: Copy the index.html to ubunto server
+        uses: marcodallasanta/ssh-scp-deploy@v1.2.0
+        with:
+          local: 'index.html'
+          remote: '~/index.html'
+          host: ${{secrets.HOST}}
+          user: ${{secrets.USER}}
+          key: ${{secrets.key}}
+          pre_upload: sudo rm -rf /var/www/html/index.html
+          post_upload: sudo mv ~/index.html /var/www/html/index.html
+          ssh_options: -o StrictHostKeyChecking=no
