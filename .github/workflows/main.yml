@@ -91,7 +91,7 @@ jobs:
       - name: Copy the hello.sh to Ubuntu Server
         uses: marcodallasanta/ssh-scp-deploy@v1.2.0
         with:
-          local: '~/scripts/hello.sh'
+          local: '/scripts/hello.sh'
           remote: '~/hello.sh'
           host: ${{secrets.HOST}}
           user: ${{secrets.USER}}
