@@ -46,8 +46,8 @@ jobs:
     steps:
       - name: Run sh script 
         run: |
-        chmod +x ./scripts/hello.sh
-        ./scripts/hello.sh
+          chmod +x ./scripts/hello.sh
+          ./scripts/hello.sh
 
 
   deployment:
