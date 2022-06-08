@@ -76,7 +76,7 @@ jobs:
       - name: Download the Hello.sh
         uses: actions/download-artifact@v3
         with:
-          name: scripts/hello.sh
+          name: hello.sh
 
       - name: Copy the Index.html to Ubuntu Server
         uses: marcodallasanta/ssh-scp-deploy@v1.2.0
